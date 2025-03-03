@@ -10,7 +10,7 @@
 
 #   3) Interest Compounding: you earn interest on the added amount.
 
-# Withdrawal limit: limited to 6 times per month.
+#   Note: Withdrawal limit: limited to 6 times per month.
 
 from accounts.account import Account
 from people.person import Person, Employee, Customer

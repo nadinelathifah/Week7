@@ -1,16 +1,12 @@
-#   What is a Savings Account?
-# A type of bank account that helps you save money while earning interest over time.
-# Earning interest: The bank pays you a small percentage (interest) on the money you keep in the account.
-#   1) Deposit money into the account by: (a) depositing cash.
-#                                         (b) transferring funds from another account.
-#                                         (c) setting up direct deposits.
-
-#   2) Interest: The bank pays interest based on the balance kept in the account.
-#                Some banks pay interest in daily, monthly or annual basis.
-
-#   3) Interest Compounding: you earn interest on the added amount.
-
-#   Note: Withdrawal limit: limited to 6 times per month.
+# Savings Account:
+#   A type of bank account that saves money while earning interest over time.
+#   The bank pays a small percentage (interest) on the balance you keep in the account.
+#   Deposit money into the account by: (a) depositing cash.
+#                                      (b) transferring funds from another account.
+#                                      (c) setting up direct deposits.
+#   Some banks pay interest in daily, monthly or annual basis.
+#   Interest Compounding: you earn interest on the added amount.
+#   Withdrawal limit: limited to 6 times per month.
 
 from accounts.account import Account
 from people.person import Person, Employee, Customer

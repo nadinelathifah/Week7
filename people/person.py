@@ -1,11 +1,10 @@
-
 #   Person class (Base class)
 
 # Person is the base class representing a general person with attributes: firstname, lastname etc.
 # Attributes        are Variables (properties) associated with a class which stores data.
 # Class             A blueprint/template for creating objects.
 #                   It defines attributes (data) and methods (functions) that the objects will have.
-#
+
 # Object            An instance of a class.
 #                   Objects have actual data and can perform actions.
 
@@ -53,9 +52,8 @@ class Person:
     #     if
 
 
-#   Employee class (Subclass)
 
-# Employee is a subclass of Person and inherits the properties of Person while adding more attributes: employee_id, position.
+# Employee is a Subclass of Person and inherits the properties of Person while adding more attributes: employee_id, position.
 class Employee(Person):
     def __init__(self, firstname, lastname, age, email, address, employee_id, position, salary):
 #       super() is a function used to call a method from the base (super) class.

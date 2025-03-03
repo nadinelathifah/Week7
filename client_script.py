@@ -18,7 +18,8 @@ print(create_banner("Welcome to Fairytale Bank", 95))
 #   cinderella is an instance object created from the Person base class.
 cinderella = Person("Princess", "Cinderella", 19, "F", "cinderella@gmail.com", "9 Pumpkin Cottage Ln")
 #   alice is an instance object created from the Employee subclass.
-alice = Employee("Alice", "Liddell", 25, "F", "alicerabbit@gmail.com", "12 Wonderland Drive", "E001", "Accountant", 5000)
+alice = Employee("Alice", "Liddell", 25, "F", "alicerabbit@gmail.com", "12 Wonderland Drive", "E001", "Accountant", 5000, "Kingsleigh")
+hans = Employee("Hans", "Westergaard", 30, "M", "princehans@gmail.com", "Frozen Palace", "E002", "Reception", 200, "Arendale")
 #   snow is an instance object created from the Customer subclass.
 snow = Customer("Snow", "White", 20, "F", "snow.white@gmail.com", "7 Dwarves St", "C001", "Silver")
 print(add_border(0))
@@ -31,8 +32,11 @@ print(add_border(0))
 #   Displaying information from the instance object from Employee subclass:
 print(alice.display_info())
 print(alice.get_person_type())
+print(hans.employee_count)
 print(add_border(0))
-
+print(hans.display_info())
+print(hans.get_employee_count())
+print(add_border(0))
 #   Displaying information from the instance object from Customer subclass:
 print(snow.display_info())
 print(snow.get_person_type())
@@ -58,7 +62,7 @@ print(snow_account.withdraw(100))
 
 print(add_border(90))
 #   Creating a savings account, depositing $1000 into the savings account and setting an interest rate:
-snow_savings = Savings("Snow White", snow_account.get_balance(),0, 2.5 )
+snow_savings = Savings("Snow White", snow_account.get_balance(),0, 2.5)
 print(snow_savings)
 
 print(add_border(90))
@@ -89,7 +93,7 @@ print(snow_withdraw)
 snow_withdraw = snow_savings.withdraw_savings(50)
 print(snow_withdraw)
 
-snow_count = snow_savings.get_count()
+snow_count = snow_savings.get_withdrawal_attempts()
 print(snow_count)
 
 

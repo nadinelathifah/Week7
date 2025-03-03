@@ -13,11 +13,11 @@ from accounts.account import Account
 from people.person import Person, Employee, Customer
 
 class Savings(Account):
+    withdrawal_attempts = 0
     def __init__(self, account_holder, balance, savings_balance, interest):
         super().__init__(account_holder, balance)
         self.__savings_balance = savings_balance
         self.__interest = interest / 100
-        self.withdrawal_attempts = 0
 
 
     def deposit_to_savings(self, amount):
@@ -42,15 +42,16 @@ class Savings(Account):
 
 
     def withdraw_savings(self, amount):
-        if self.withdrawal_attempts >= 6:
+        if Savings.withdrawal_attempts >= 6:
             return f"\033[1;91m★ Withdrawal Blocked ★ Unfortunately, you have reached the maximum withdrawal limit for this month.\nPlease refer to your checking account for future transactions.\033[0m"
         elif 0 < amount <= self.__savings_balance:
             self.__savings_balance -= amount
-            self.withdrawal_attempts += 1
+            Savings.withdrawal_attempts += 1
             return f"\033[93m${amount} has been withdrawn from the account belonging to {self.account_holder}.\033[0m\nNew balance: $\033[97m{self.__savings_balance}\033[0m"
         else:
             return f"Invalid withdrawal amount. Please ensure that you have entered a positive integer and that there are sufficient funds in your account."
 
-    def get_count(self):
-        return f"Withdrawal attempt: {self.withdrawal_attempts}"
+    @classmethod
+    def get_withdrawal_attempts(cls):
+        return f"Withdrawal attempt: {Savings.withdrawal_attempts}"
 

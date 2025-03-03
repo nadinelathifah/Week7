@@ -1,10 +1,6 @@
 #   What is a Savings Account?
-
 # A type of bank account that helps you save money while earning interest over time.
 # Earning interest: The bank pays you a small percentage (interest) on the money you keep in the account.
-#                   This is how your savings grow.
-
-#   How does it work?
 #   1) Deposit money into the account by: (a) depositing cash.
 #                                         (b) transferring funds from another account.
 #                                         (c) setting up direct deposits.

@@ -16,11 +16,11 @@ from display import create_banner, add_border
 print(create_banner("Welcome to Fairytale Bank", 95))
 
 #   cinderella is an instance object created from the Person base class.
-cinderella = Person("Princess", "Cinderella", 19, "cinderella@gmail.com", "9 Pumpkin Cottage Ln")
+cinderella = Person("Princess", "Cinderella", 19, "F", "cinderella@gmail.com", "9 Pumpkin Cottage Ln")
 #   alice is an instance object created from the Employee subclass.
-alice = Employee("Alice", "Smith", 25, "alicesmith@gmail.com", "123 Wonderland St", "E001", "Accountant", 5000)
+alice = Employee("Alice", "Liddell", 25, "F", "alicerabbit@gmail.com", "12 Wonderland Drive", "E001", "Accountant", 5000)
 #   snow is an instance object created from the Customer subclass.
-snow = Customer("Snow", "White", 20, "snow.white@gmail.com", "7 Dwarves St", "C001", "Silver")
+snow = Customer("Snow", "White", 20, "F", "snow.white@gmail.com", "7 Dwarves St", "C001", "Silver")
 print(add_border(0))
 
 #   Displaying information from the instance object from Person base class:
@@ -67,6 +67,30 @@ print(add_border(90))
 print(snow_savings.add_interest())
 
 # Problem: when main account balance is printed again, the $1000 transfer from main account -> savings account is not reflected in main account balance.
+
+snow_withdraw = snow_savings.withdraw_savings(50)
+print(snow_withdraw)
+
+snow_withdraw = snow_savings.withdraw_savings(50)
+print(snow_withdraw)
+
+snow_withdraw = snow_savings.withdraw_savings(50)
+print(snow_withdraw)
+
+snow_withdraw = snow_savings.withdraw_savings(50)
+print(snow_withdraw)
+
+snow_withdraw = snow_savings.withdraw_savings(50)
+print(snow_withdraw)
+
+snow_withdraw = snow_savings.withdraw_savings(50)
+print(snow_withdraw)
+
+snow_withdraw = snow_savings.withdraw_savings(50)
+print(snow_withdraw)
+
+snow_count = snow_savings.get_count()
+print(snow_count)
 
 
 

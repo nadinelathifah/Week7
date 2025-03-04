@@ -67,3 +67,6 @@ class Savings(Account):
 
     def __str__(self):
         return f"Account Holder: {self.account_holder.get_fullname()}\nMain Account balance: $\033[97m{self.get_balance()}\033[0m\nSavings Account balance: $\033[97m{self.get_savings_balance()}\033[0m"
+
+#   Exception for withdrawal limit.
+

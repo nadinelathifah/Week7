@@ -106,28 +106,28 @@ print(snow_savings.deposit_to_savings(1000))
 print(add_border(90))
 print(snow_savings.add_interest())
 
-# Problem: when main account balance is printed again, the $1000 transfer from main account -> savings account is not reflected in main account balance.
+# snow_withdraw = snow_savings.withdraw_savings(50)
+# print(snow_withdraw)
+#
+# snow_withdraw = snow_savings.withdraw_savings(50)
+# print(snow_withdraw)
+#
+# snow_withdraw = snow_savings.withdraw_savings(50)
+# print(snow_withdraw)
+#
+# snow_withdraw = snow_savings.withdraw_savings(50)
+# print(snow_withdraw)
+#
+# snow_withdraw = snow_savings.withdraw_savings(50)
+# print(snow_withdraw)
+#
+# snow_withdraw = snow_savings.withdraw_savings(50)
+# print(snow_withdraw)
+#
+# snow_withdraw = snow_savings.withdraw_savings(50)
+# print(snow_withdraw)
+#
+# snow_count = snow_savings.get_withdrawal_attempts()
+# print(snow_count)
 
-snow_withdraw = snow_savings.withdraw_savings(50)
-print(snow_withdraw)
-
-snow_withdraw = snow_savings.withdraw_savings(50)
-print(snow_withdraw)
-
-snow_withdraw = snow_savings.withdraw_savings(50)
-print(snow_withdraw)
-
-snow_withdraw = snow_savings.withdraw_savings(50)
-print(snow_withdraw)
-
-snow_withdraw = snow_savings.withdraw_savings(50)
-print(snow_withdraw)
-
-snow_withdraw = snow_savings.withdraw_savings(50)
-print(snow_withdraw)
-
-snow_withdraw = snow_savings.withdraw_savings(50)
-print(snow_withdraw)
-
-snow_count = snow_savings.get_withdrawal_attempts()
-print(snow_count)
+# Question: when main account balance is printed again, the $1000 transfer from main account -> savings account is not reflected in main account balance.

@@ -134,4 +134,4 @@ print(snow_count)
 
 
 # Question: when main account balance is printed again, the $1000 transfer from main account -> savings account is not reflected in main account balance.
-
+# Question: when to use __str__ and when to use __repr__

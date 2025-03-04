@@ -23,6 +23,9 @@ class Account:
     def get_balance(self):
         return self.__balance
 
+    def get_account_holder(self):
+        return self.account_holder
+
     def __str__(self):
         return f"Account holder: {self.account_holder.get_fullname()}\nCurrent balance: $\033[97m{self.__balance}\033[0m"
 

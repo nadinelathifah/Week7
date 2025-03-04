@@ -17,11 +17,11 @@ from display import create_banner, add_border
 
 print(create_banner("Welcome to Fairytale Bank", 95))
 
-#   cinderella is an instance object created from the Person base class.
+#   cinderella is an instance object created by calling the Person base class (instantiation).
 cinderella = Person("Princess",
                     "Cinderella",
                     19,
-                    "F",
+                    "Female",
                     "cinderella@gmail.com",
                     "9 Pumpkin Cottage Ln")
 
@@ -29,30 +29,30 @@ cinderella = Person("Princess",
 alice = Employee("Alice",
                  "Liddell",
                  25,
-                 "F",
+                 "Female",
                  "alicerabbit@gmail.com",
                  "12 Wonderland Drive",
                  "E001",
                  "Accountant",
                  5000,
-                 "Kingsleigh")
+                 "Wonderland")
 
 hans = Employee("Hans",
                 "Westergaard",
                 30,
-                "M",
+                "Male",
                 "princehans@gmail.com",
-                "Frozen Palace",
+                "5 Palace Boulevard",
                 "E002",
                 "Reception",
                 200,
-                "Arendale")
+                "Wonderland")
 
 #   snow is an instance object created from the Customer subclass.
 snow = Customer("Snow",
                 "White",
                 20,
-                "F",
+                "Female",
                 "snow.white@gmail.com",
                 "7 Dwarves St",
                 "C001",

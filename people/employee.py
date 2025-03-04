@@ -13,10 +13,13 @@ class Employee(Person):
         self.__city = city
         Employee.employee_count += 1
 
-    def display_info(self):
-        person_info = super().__str__()
-        return f"{person_info}\nEmployee ID: {self.__employee_id}\nPosition: {self.position}\nSalary: {self.__salary}\nCity: {self.__city}"
+    # def __str__(self):
+    #     person_info = super().__str__()
+    #     return f"{person_info}\nEmployee ID: {self.__employee_id}\nPosition: {self.position}\nSalary: {self.__salary}\nCity: {self.__city}"
 
+    def __repr__(self):
+        person_info = super().__str__()
+        return "%s\nEmployee iD: %s\nPosition: %s\nSalary: %s\nCity: %s"%(person_info, self.__employee_id, self.position, self.__salary, self.__city)
 
 #   SETTER
     def set_employee_id(self, employee_id):
@@ -59,9 +62,26 @@ class Employee(Person):
     def get_city(self):
         return self.__city
 
+#   CLASS METHOD
+#   A class method is a method that is bound to the class instead of the instance of a class.
+#   Reflected by first argument cls instead of self.
+#   Used to operate on the class itself, not instance.
     @classmethod
     def get_employee_count(cls):
         return Employee.employee_count
 
     def get_person_type(self):          # Polymorphism
         return f"Person Type: Employee"
+
+hans = Employee("Hans",
+                "Westergaard",
+                30,
+                "Male",
+                "princehans@gmail.com",
+                "5 Palace Boulevard",
+                "E002",
+                "Reception",
+                200,
+                "Wonderland")
+
+print(hans)

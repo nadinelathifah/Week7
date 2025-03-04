@@ -14,14 +14,14 @@ class Customer(Person):
 
 #   SETTER
 
-    def set_customer_id(self):
+    def set_customer_id(self, customer_id):
         id_structure = f"C00{Customer.customer_count}"
         if customer_id == id_structure:
             self.__customer_id = customer_id
         else:
             raise ValueError("Customer ID must be in the following structure: C00{customer count}")
 
-    def set_membership(self):
+    def set_membership(self, membership):
         if str(membership).isalpha():
             self._membership = membership
         else:

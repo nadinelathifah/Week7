@@ -1,3 +1,4 @@
+# Account Base Class:
 class Account:
     def __init__(self, account_holder, balance):
         self.account_holder = account_holder
@@ -16,6 +17,7 @@ class Account:
             return f"\033[93m${amount} has been withdrawn from the account belonging to {self.account_holder.get_fullname()}.\033[0m\nMain Account balance: $\033[97m{self.__balance}\033[0m"
         else:
             raise InsufficientFundsException(f"Invalid withdrawal amount. Please enter a positive integer or check for sufficient funds.")
+
 
 #   GETTER and SETTER
     def get_balance(self):

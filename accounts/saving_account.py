@@ -22,8 +22,8 @@ class Savings(Account):
 
     def deposit_to_savings(self, amount):
         if 0 < amount < self.get_balance():
-            self.__savings_balance += amount
             self.withdraw(amount)
+            self.__savings_balance += amount
             return f"\033[92m${amount} has been transferred to the savings account belonging to {self.account_holder.get_fullname()}.\033[0m\nMain Account balance: $\033[97m{self.get_balance()}\033[0m\nSavings Account balance: $\033[97m{self.__savings_balance}\033[0m"
         else:
             raise InsufficientFundsException("Invalid transfer. Ensure that the number you have entered is positive and that you have sufficient balance in your main account.")

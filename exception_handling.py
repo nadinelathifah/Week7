@@ -1,12 +1,11 @@
-from people.person import Person
-from people.customer import Customer
-from people.employee import Employee
-from accounts.account import Account, InsufficientFundsException
-from accounts.saving_account import Savings
-from display import create_banner, add_border
-
 
 try:
+    from people.person import Person
+    from people.customer import Customer
+    from people.employee import Employee
+    from accounts.account import Account, InsufficientFundsException
+    from accounts.saving_account import Savings
+    from display import create_banner, add_border
     print(create_banner("Welcome to Fairytale Bank", 95))
     cinderella = Person("Princess",
                         "Cinderella",
@@ -68,7 +67,7 @@ try:
     print(snow_account)
     print(add_border(90))
     print(snow_account.deposit(2100))
-    print(snow_account.withdraw(100))
+    print(snow_account.withdraw(3000))
     print(add_border(90))
     snow_savings = Savings(snow, snow_account.get_balance(), 0, 2.5)
     print(snow_savings)

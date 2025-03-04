@@ -68,7 +68,7 @@ print(add_border(0))
 #   Displaying information from the instance object from Employee subclass:
 print(alice)
 print(alice.get_person_type())
-print(hans.employee_count)
+print(alice.employee_count)
 print(add_border(0))
 print(hans)
 print(hans.get_employee_count())
@@ -85,15 +85,16 @@ print(snow.get_lastname())
 print(add_border(90))
 
 
-#   Setting up a Checking Account for Snow White
-print(create_banner("Snow White: Checking Account", 97))
+#   Setting up a Checking Account for Snow Blue
+print(create_banner("Snow Blue: Checking Account", 97))
 print("\n")
 snow_account = Account(snow,0)
 print(snow_account)
 
 print(add_border(90))
-#   Depositing $200 into Snow White's account:
+#   Depositing $2100 into Snow Blue's account:
 print(snow_account.deposit(2100))
+#   Withdrawing $100 from Snow Blue's account
 print(snow_account.withdraw(100))
 print(add_border(90))
 #   Creating a savings account, depositing $1000 into the savings account and setting an interest rate:
@@ -127,7 +128,10 @@ print(snow_withdraw)
 snow_withdraw = snow_savings.withdraw_savings(50)
 print(snow_withdraw)
 
+
 snow_count = snow_savings.get_withdrawal_attempts()
 print(snow_count)
 
+
 # Question: when main account balance is printed again, the $1000 transfer from main account -> savings account is not reflected in main account balance.
+

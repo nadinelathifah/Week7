@@ -8,6 +8,7 @@ class Customer(Person):
         self._membership = membership
         Customer.customer_count += 1
 
+#   Returns python-readable format to display Customer class attributes only.
     def __repr__(self):
         return "\nCustomer iD: %s\nMembership: %s"%(self.__customer_id, self._membership)
 
@@ -40,3 +41,7 @@ class Customer(Person):
 
     def get_person_type(self):
         return f"Person Type: Customer"
+
+    @classmethod
+    def get_customer_count(cls):
+        return Customer.customer_count

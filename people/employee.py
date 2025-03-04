@@ -17,6 +17,7 @@ class Employee(Person):
         person_info = super().__str__()
         return f"{person_info}\nEmployee ID: {self.__employee_id}\nPosition: {self.position}\nSalary: {self.__salary}\nCity: {self.__city}"
 
+#   Returns python-readable format to display Customer class attributes only.
     def __repr__(self):
         return "\nEmployee iD: %s\nPosition: %s\nSalary: %s\nCity: %s"%(self.__employee_id, self.position, self.__salary, self.__city)
 

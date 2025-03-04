@@ -18,12 +18,46 @@ from display import create_banner, add_border
 print(create_banner("Welcome to Fairytale Bank", 95))
 
 #   cinderella is an instance object created from the Person base class.
-cinderella = Person("Princess", "Cinderella", 19, "F", "cinderella@gmail.com", "9 Pumpkin Cottage Ln")
-#   alice is an instance object created from the Employee subclass.
-alice = Employee("Alice", "Liddell", 25, "F", "alicerabbit@gmail.com", "12 Wonderland Drive", "E001", "Accountant", 5000, "Kingsleigh")
-hans = Employee("Hans", "Westergaard", 30, "M", "princehans@gmail.com", "Frozen Palace", "E002", "Reception", 200, "Arendale")
+cinderella = Person("Princess",
+                    "Cinderella",
+                    19,
+                    "F",
+                    "cinderella@gmail.com",
+                    "9 Pumpkin Cottage Ln")
+
+#   alice and hans are instance objects created from the Employee subclass.
+alice = Employee("Alice",
+                 "Liddell",
+                 25,
+                 "F",
+                 "alicerabbit@gmail.com",
+                 "12 Wonderland Drive",
+                 "E001",
+                 "Accountant",
+                 5000,
+                 "Kingsleigh")
+
+hans = Employee("Hans",
+                "Westergaard",
+                30,
+                "M",
+                "princehans@gmail.com",
+                "Frozen Palace",
+                "E002",
+                "Reception",
+                200,
+                "Arendale")
+
 #   snow is an instance object created from the Customer subclass.
-snow = Customer("Snow", "White", 20, "F", "snow.white@gmail.com", "7 Dwarves St", "C001", "Silver")
+snow = Customer("Snow",
+                "White",
+                20,
+                "F",
+                "snow.white@gmail.com",
+                "7 Dwarves St",
+                "C001",
+                "Silver")
+
 print(add_border(0))
 
 #   Displaying information from the instance object from Person base class:

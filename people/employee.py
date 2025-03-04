@@ -19,8 +19,12 @@ class Employee(Person):
 
 
 #   SETTER
-    def set_employee_id(self):
-        pass
+    def set_employee_id(self, employee_id):
+        id_structure = f"E00{Employee.employee_count}"
+        if employee_id == id_structure:
+            self.__employee_id = employee_id
+        else:
+            raise ValueError("Employee ID must be in the following structure: E00{employee count}.\nThe employee count can be found via get_employee_count()")
 
     def set_position(self, position):
         if str(position).isalpha():

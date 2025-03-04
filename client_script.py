@@ -61,20 +61,20 @@ snow = Customer("Snow",
 print(add_border(0))
 
 #   Displaying information from the instance object from Person base class:
-print(cinderella.__str__())
+print(cinderella)
 print(cinderella.get_person_type())
 print(add_border(0))
 
 #   Displaying information from the instance object from Employee subclass:
-print(alice.display_info())
+print(alice)
 print(alice.get_person_type())
 print(hans.employee_count)
 print(add_border(0))
-print(hans.display_info())
+print(hans)
 print(hans.get_employee_count())
 print(add_border(0))
 #   Displaying information from the instance object from Customer subclass:
-print(snow.display_info())
+print(snow)
 print(snow.get_person_type())
 print(add_border(90))
 #   Changing Snow White's last name:
@@ -131,22 +131,3 @@ print(snow_withdraw)
 
 snow_count = snow_savings.get_withdrawal_attempts()
 print(snow_count)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

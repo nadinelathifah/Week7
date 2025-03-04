@@ -8,9 +8,12 @@ class Customer(Person):
         self._membership = membership
         Customer.customer_count += 1
 
-    def display_info(self):
+    def __repr__(self):
+        return "\nCustomer iD: %s\nMembership: %s"%(self.__customer_id, self._membership)
+
+    def __str__(self):
         person_info = super().__str__()
-        return f"{person_info}\nCustomer ID: {self.__customer_id}\nMembership: {self._membership}"
+        return f"{person_info}\nCustomer ID: {self.__customer_id}\nMembership Type: {self._membership}"
 
 #   SETTER
 

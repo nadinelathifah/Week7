@@ -10,7 +10,6 @@
 #   Withdrawal limit: limited to 6 times per month.
 
 from accounts.account import Account
-from people.person import Person, Employee, Customer
 
 class Savings(Account):
     withdrawal_attempts = 0
@@ -32,9 +31,6 @@ class Savings(Account):
     def get_savings_balance(self):
         return self.__savings_balance
 
-    def __str__(self):
-        return f"Account Holder: {self.account_holder}\nMain Account balance: $\033[97m{self.get_balance()}\033[0m\nSavings Account balance: $\033[97m{self.get_savings_balance()}\033[0m"
-
     def add_interest(self):
         interest = self.__savings_balance * self.__interest
         self.__savings_balance += interest
@@ -55,3 +51,5 @@ class Savings(Account):
     def get_withdrawal_attempts(cls):
         return f"Withdrawal attempt: {Savings.withdrawal_attempts}"
 
+    def __str__(self):
+        return f"Account Holder: {self.account_holder}\nMain Account balance: $\033[97m{self.get_balance()}\033[0m\nSavings Account balance: $\033[97m{self.get_savings_balance()}\033[0m"

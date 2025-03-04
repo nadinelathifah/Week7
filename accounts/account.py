@@ -18,12 +18,15 @@ class Account:
         else:
             return f"Invalid withdrawal amount. Please enter a positive integer or check for sufficient funds."
 
-#   GETTER and SETTER
+    def __str__(self):
+        return f"Account Holder: {self.account_holder}\nCurrent balance: $\033[97m{self.__balance}\033[0m"
+
+#   GETTER
+    def get_account_holder(self):
+        return self.account_holder
+
     def get_balance(self):
         return self.__balance
-
-    def __str__(self):
-        return f"Account holder: {self.account_holder}\nCurrent balance: $\033[97m{self.__balance}\033[0m"
 
 
 

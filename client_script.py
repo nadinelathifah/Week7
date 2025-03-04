@@ -78,7 +78,7 @@ print(snow)
 print(snow.get_person_type())
 print(add_border(90))
 #   Changing Snow White's last name:
-print(snow.set_lastname("Blue"))
+snow.set_lastname("Blue")
 # Two ways to check:
 print(snow.get_fullname())
 print(snow.get_lastname())
@@ -95,39 +95,39 @@ print(add_border(90))
 #   Depositing $200 into Snow White's account:
 print(snow_account.deposit(2100))
 print(snow_account.withdraw(100))
-
 print(add_border(90))
 #   Creating a savings account, depositing $1000 into the savings account and setting an interest rate:
-snow_savings = Savings(snow, snow_account.get_balance(),0, 2.5)
+snow_savings = Savings(snow, snow_account.get_balance(),0, 0)
 print(snow_savings)
 
 print(add_border(90))
 print(snow_savings.deposit_to_savings(1000))
+snow_savings.set_interest(2.5)
 print(add_border(90))
-print(snow_savings.add_interest())
+print(snow_savings.calculate_interest())
 
-# snow_withdraw = snow_savings.withdraw_savings(50)
-# print(snow_withdraw)
-#
-# snow_withdraw = snow_savings.withdraw_savings(50)
-# print(snow_withdraw)
-#
-# snow_withdraw = snow_savings.withdraw_savings(50)
-# print(snow_withdraw)
-#
-# snow_withdraw = snow_savings.withdraw_savings(50)
-# print(snow_withdraw)
-#
-# snow_withdraw = snow_savings.withdraw_savings(50)
-# print(snow_withdraw)
-#
-# snow_withdraw = snow_savings.withdraw_savings(50)
-# print(snow_withdraw)
-#
-# snow_withdraw = snow_savings.withdraw_savings(50)
-# print(snow_withdraw)
-#
-# snow_count = snow_savings.get_withdrawal_attempts()
-# print(snow_count)
+snow_withdraw = snow_savings.withdraw_savings(50)
+print(snow_withdraw)
+
+snow_withdraw = snow_savings.withdraw_savings(50)
+print(snow_withdraw)
+
+snow_withdraw = snow_savings.withdraw_savings(50)
+print(snow_withdraw)
+
+snow_withdraw = snow_savings.withdraw_savings(50)
+print(snow_withdraw)
+
+snow_withdraw = snow_savings.withdraw_savings(50)
+print(snow_withdraw)
+
+snow_withdraw = snow_savings.withdraw_savings(50)
+print(snow_withdraw)
+
+snow_withdraw = snow_savings.withdraw_savings(50)
+print(snow_withdraw)
+
+snow_count = snow_savings.get_withdrawal_attempts()
+print(snow_count)
 
 # Question: when main account balance is printed again, the $1000 transfer from main account -> savings account is not reflected in main account balance.

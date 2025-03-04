@@ -17,7 +17,7 @@ class Savings(Account):
     def __init__(self, account_holder, balance, savings_balance, interest):
         super().__init__(account_holder, balance)
         self.__savings_balance = savings_balance
-        self.__interest = interest / 100
+        self.__interest = interest
 
 
     def deposit_to_savings(self, amount):
@@ -35,26 +35,35 @@ class Savings(Account):
         elif 0 < amount <= self.__savings_balance:
             self.__savings_balance -= amount
             Savings.withdrawal_attempts += 1
-            return f"\033[93m${amount} has been withdrawn from the account belonging to {self.account_holder.get_fullname()}.\033[0m\nNew balance: $\033[97m{self.__savings_balance}\033[0m"
+            return f"\033[93m${amount} has been withdrawn from the account belonging to {self.account_holder.get_fullname()}.\033[0m\nSavings Account balance: $\033[97m{self.__savings_balance}\033[0m"
         else:
             return InsufficientFundsException("Invalid withdrawal amount. Please ensure that you have entered a positive integer and that there are sufficient funds in your account.")
 
 
+#   The isinstance() is a built-in function that is used to validate whether the instance object belongs to a specific class.
+#   However, in this scenario, it is used to check if the data from interest attribute in the object is a float.
+    def set_interest(self, interest):
+        if isinstance(interest, float):
+            self.__interest = interest
+        else:
+            raise ValueError("Interest rate must be a float.")
+
+    def calculate_interest(self):
+        interest = self.__savings_balance * (self.__interest / 100)
+        self.__savings_balance += interest
+        return f"Interest rate applied: \033[96m{self.__interest}%\033[0m\nInterest rate amount: $\033[97m{interest:.0f}\033[0m\nSavings Account balance: $\033[97m{self.__savings_balance:.0f}\033[0m"
+
+
+#   GETTER
     def get_savings_balance(self):
         return self.__savings_balance
 
-
-    def __str__(self):
-        return f"Account Holder: {self.account_holder.get_fullname()}\nMain Account balance: $\033[97m{self.get_balance()}\033[0m\nSavings Account balance: $\033[97m{self.get_savings_balance()}\033[0m"
-
-
-    def add_interest(self):
-        interest = self.__savings_balance * self.__interest
-        self.__savings_balance += interest
-        return f"Interest rate applied: \033[96m{self.__interest * 100}%\033[0m\nInterest rate amount: $\033[97m{interest:.0f}\033[0m\nNew savings balance: $\033[97m{self.__savings_balance:.0f}\033[0m"
-
+    def get_interest(self):
+        return self.__interest
 
     @classmethod
     def get_withdrawal_attempts(cls):
         return f"Withdrawal attempt: {Savings.withdrawal_attempts}"
 
+    def __str__(self):
+        return f"Account Holder: {self.account_holder.get_fullname()}\nMain Account balance: $\033[97m{self.get_balance()}\033[0m\nSavings Account balance: $\033[97m{self.get_savings_balance()}\033[0m"

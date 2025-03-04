@@ -75,7 +75,7 @@ try:
     print(add_border(90))
     print(snow_savings.deposit_to_savings(1000))
     print(add_border(90))
-    print(snow_savings.add_interest())
+    print(snow_savings.calculate_interest())
 except FileNotFoundError as error:
     print("★★★★★★★★★★★★★★ EXCEPTION: FileNotFoundError ★★★★★★★★★★★★★★")
     print(f"The following file can not be found: {error.filename}. Please try another file")

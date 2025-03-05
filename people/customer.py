@@ -39,18 +39,18 @@ class Customer(Person):
             ["Customer Name", f"{self.get_fullname()}"],
             ["Customer ID", f"{self.__customer_id}"],
             ["Item Name", f"{item.get_item_name()}"],
-            ["Item Cost", f"{item.get_item_cost()}"],
+            ["Item Cost", f"${item.get_item_cost()}"],
             ["Item Quantity", f"{item.get_item_quantity()}"],
             ["Total Cost", f"{item.calculate_total_cost()}"],
             ["Purchase Date", f"{Date.display_date(date)}"],
-            ["Remaining Balance", f"{self.__account.get_balance()}"]
+            ["Remaining Balance", f"${self.__account.get_balance()}"]
         ]
 #       Display output in table format using tabulate (as tb)
         table = tb(data, headers=["Description","Details"], tablefmt="simple")
 
-        top = "--------------------------"
-        middle = "         Receipt         "
-        bottom = "--------------------------"
+        top = "-----------------------------"
+        middle = "          Receipt          "
+        bottom = "-----------------------------"
         heading = f"{top}\n{middle}\n{bottom}"
         return f"{heading}\n{table}\n{bottom}"
 

@@ -100,7 +100,7 @@ print(hans_account)
 print(add_border(90))
 
 #   Adding Monthly Salary:
-# 1) Set the hans_account object to account parameter from Employee class:
+# 1) Set the Account object hans_account to the "account" parameter in Employee class:
 hans.set_account(hans_account)
 # 2) Set the salary assigned by the bank:
 hans.set_salary(10000)
@@ -123,9 +123,10 @@ print(create_banner("Snow Blue: Checking Account", 94))
 print("\n")
 snow_account = Account(snow)
 print(snow_account)
+#   Set the Account object "snow_account" to the "account" parameter in Customer class
 snow.set_account(snow_account)
-
 print(add_border(90))
+
 #   Depositing $2100 into Snow Blue's account:
 print(snow_account.deposit(2100))
 #   Withdrawing $100 from Snow Blue's account
@@ -159,11 +160,15 @@ print(create_banner("Snow Blue: Savings Account", 94))
 print("\n")
 snow_savings = Savings(snow, snow_account.get_balance())
 print(snow_savings)
-
 print(add_border(90))
+
+#   Depositing $1000 into Savings Account:
 print(snow_savings.deposit_to_savings(1000))
+
+#   Setting an interest rate for the Savings Account:
 snow_savings.set_interest(2.5)
 print(add_border(90))
+
 print(snow_savings.calculate_interest())
 
 snow_withdraw = snow_savings.withdraw_savings(100)

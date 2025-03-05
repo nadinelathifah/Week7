@@ -94,7 +94,7 @@ try:
     print(add_border(90))
 
     #   Adding Monthly Salary:
-    # 1) Set the hans_account object to account parameter from Employee class:
+    # 1) Set the Account object hans_account to the "account" parameter in Employee class:
     hans.set_account(hans_account)
     # 2) Set the salary assigned by the bank:
     hans.set_salary(10000)
@@ -116,9 +116,10 @@ try:
     print("\n")
     snow_account = Account(snow)
     print(snow_account)
+    #   Set the Account object "snow_account" to the "account" parameter in Customer class
     snow.set_account(snow_account)
-
     print(add_border(90))
+
     #   Depositing $2100 into Snow Blue's account:
     print(snow_account.deposit(2100))
     #   Withdrawing $100 from Snow Blue's account
@@ -131,9 +132,9 @@ try:
     # 2) Set the cost and quantity of said apple Item:
     apple.set_item_cost(5)
     apple.set_item_quantity(4)
-    # 3) Set the apple object to item parameter in Customer class:
+    # 3) Set the apple object to "item" parameter in Customer class:
     snow.set_item(apple)
-    # 4) Calculate the total cost of the items:
+    # 4) Calculate the total cost of the items ($20):
     apple.calculate_total_cost()
     # 5) Make the purchase (item.calculate_total_cost() has already been applied to the make_purchase(self) method):
     snow.make_purchase(apple)
@@ -142,25 +143,33 @@ try:
 
     #   Set a date for her purchase:
     date = Date(21, 12, 1937)
+
+    #   Display the receipt for the item:
     print(snow.display_receipt(apple, date))
     print(add_border(90))
     print("\n")
 
-    #   Creating a savings account for Snow Blue, depositing $1000 into the savings account and setting an interest rate:
+    #   Creating a savings account for Snow Blue:
     print(create_banner("Snow Blue: Savings Account", 94))
     print("\n")
     snow_savings = Savings(snow, snow_account.get_balance())
     print(snow_savings)
-
     print(add_border(90))
+
+    #   Depositing $1000 into Savings Account:
     print(snow_savings.deposit_to_savings(1000))
+
+    #   Setting an interest rate of 2.5% to the Savings Account:
     snow_savings.set_interest(2.5)
     print(add_border(90))
+
+    #   Calculating the Savings Balance after applying the interest rate:
     print(snow_savings.calculate_interest())
 
+    #   Withdrawing $100 from the Savings Account
     snow_withdraw = snow_savings.withdraw_savings(100)
     print(snow_withdraw)
-
+    #   Attempt 2
     snow_withdraw = snow_savings.withdraw_savings(100)
     print(snow_withdraw)
 
@@ -182,6 +191,9 @@ try:
 
     snow_count = snow_savings.get_withdrawal_attempts()
     print(snow_count)
+
+    # snow_withdraw = snow_savings.withdraw_savings(2000)
+    # print(snow_withdraw)
 except FileNotFoundError as error:
     print("★★★★★★★★★★★★★★ EXCEPTION: FileNotFoundError ★★★★★★★★★★★★★★")
     print(f"The following file can not be found: {error.filename}. Please try another file")
@@ -206,4 +218,5 @@ except Exception as error:
     print("A general exception has been raised.")
     print(error)
 finally:
+    print("\u2605"*200)
     print("Continue bank program.")

@@ -1,195 +1,210 @@
-#   Inheritance Hierarchy Exercise
+#   Exception Handling
 
-#   Task A + B:
-#       - Create a person inheritance hierarchy:
-#       - Design 3 classes: person, employee and customer.
-#       - Consider appropriate constructors, properties and methods for these classes.
-#       - Demonstrate your understanding of encapsulation, inheritance and polymorphism.
-#       - create a client script and instantiate objects based on the above classes and call their methods and set their properties to demonstrate working functionality.
-#       - Create an Account inheritance hierarchy, as above, design one for bank account types + client script to demonstrate functionality.
+try:
+    from people.person import Person
+    from people.customer import Customer
+    from people.employee import Employee
+    from accounts.account import Account
+    from accounts.saving_account import Savings
+    from banners.display import create_banner, add_border
+    from items.item import Item
+    from date.date import Date
+    from exceptions.withdrawal_attempts import WithdrawalLimitException
+    from exceptions.insufficientfunds import InsufficientFundsException
+    print(create_banner("Welcome to Fairytale Bank", 95))
 
-from people.person import Person
-from people.customer import Customer
-from people.employee import Employee
-from accounts.account import Account
-from accounts.saving_account import Savings
-from banners.display import create_banner, add_border
-from items.item import Item
-from date.date import Date
+    #   cinderella is an instance object created by calling the Person base class (instantiation).
+    cinderella = Person("Princess",
+                        "Cinderella",
+                        19,
+                        "Female",
+                        "cinderella@gmail.com",
+                        "9 Pumpkin Cottage Ln")
 
-print(create_banner("Welcome to Fairytale Bank", 95))
+    #   alice and hans are instance objects created from the Employee subclass.
+    alice = Employee("Alice",
+                     "Rabbit",
+                     25,
+                     "Female",
+                     "alicerabbit@gmail.com",
+                     "12 Wonderland Drive",
+                     "E001",
+                     "Accountant",
+                     0,
+                     "Wonderland",
+                     account=None)
 
-#   cinderella is an instance object created by calling the Person base class (instantiation).
-cinderella = Person("Princess",
-                    "Cinderella",
-                    19,
+    hans = Employee("Hans",
+                    "Westergaard",
+                    30,
+                    "Male",
+                    "princehans@gmail.com",
+                    "5 Palace Boulevard",
+                    "E002",
+                    "Chairman",
+                    0,
+                    "Wonderland")
+
+    #   snow is an instance object created from the Customer subclass.
+    snow = Customer("Snow",
+                    "White",
+                    20,
                     "Female",
-                    "cinderella@gmail.com",
-                    "9 Pumpkin Cottage Ln")
+                    "snow.white@gmail.com",
+                    "7 Dwarves St",
+                    "C001",
+                    "Silver")
 
-#   alice and hans are instance objects created from the Employee subclass.
-alice = Employee("Alice",
-                 "Rabbit",
-                 25,
-                 "Female",
-                 "alicerabbit@gmail.com",
-                 "12 Wonderland Drive",
-                 "E001",
-                 "Accountant",
-                 0,
-                 "Wonderland",
-                 account = None)
+    print(add_border(0))
 
-hans = Employee("Hans",
-                "Westergaard",
-                30,
-                "Male",
-                "princehans@gmail.com",
-                "5 Palace Boulevard",
-                "E002",
-                "Chairman",
-                0,
-                "Wonderland")
+    #   Displaying information of instance object cinderella from Person base class:
+    print(cinderella)
+    print(cinderella.get_person_type())
+    print(add_border(0))
 
-#   snow is an instance object created from the Customer subclass.
-snow = Customer("Snow",
-                "White",
-                20,
-                "Female",
-                "snow.white@gmail.com",
-                "7 Dwarves St",
-                "C001",
-                "Silver")
+    #   Displaying information of instance object alice from Employee subclass:
+    print(alice)
+    print(alice.get_person_type())
+    print(alice.employee_count)
+    print(add_border(0))
 
-print(add_border(0))
+    #   Displaying information of instance object hans from Employee subclass:
+    print(hans)
+    print(hans.get_employee_count())
+    print(add_border(0))
 
-#   Displaying information of instance object cinderella from Person base class:
-print(cinderella)
-print(cinderella.get_person_type())
-print(add_border(0))
+    #   Displaying information of instance object snow from Customer subclass:
+    print(snow)
+    print(snow.get_person_type())
+    print(add_border(90))
+    #   Changing Snow White's last name:
+    snow.set_lastname("Blue")
+    # Two ways to check:
+    print(snow.get_fullname())
+    print(snow.get_lastname())
+    print(add_border(0))
+    print("\n")
 
-#   Displaying information of instance object alice from Employee subclass:
-print(alice)
-print(alice.get_person_type())
-print(alice.employee_count)
-print(add_border(0))
+    #   Creating a Checking Account for Employee hans:
+    print(create_banner("Prince Hans: Checking Account", 96))
+    print("\n")
+    hans_account = Account(hans)
+    # Depositing to the current balance:
+    hans_account.deposit(100000)
+    print(hans_account)
+    print(add_border(90))
 
-#   Displaying information of instance object hans from Employee subclass:
-print(hans)
-print(hans.get_employee_count())
-print(add_border(0))
+    #   Adding Monthly Salary:
+    # 1) Set the hans_account object to account parameter from Employee class:
+    hans.set_account(hans_account)
+    # 2) Set the salary assigned by the bank:
+    hans.set_salary(10000)
+    # 3) Add the salary amount to han's bank account (adding to current balance):
+    print(hans.add_monthly_salary())
+    # See the added monthly salary reflected in hans's checking account:
+    print(hans_account)
+    print(add_border(90))
 
-#   Displaying information of instance object snow from Customer subclass:
-print(snow)
-print(snow.get_person_type())
-print(add_border(90))
-#   Changing Snow White's last name:
-snow.set_lastname("Blue")
-# Two ways to check:
-print(snow.get_fullname())
-print(snow.get_lastname())
-print(add_border(0))
-print("\n")
+    # Giving hans Employee a pay raise:
+    hans.add_raise()
+    # See the pay raise (20% of current salary) reflected in hans's checking account:
+    print(hans_account)
+    print(add_border(0))
+    print("\n")
 
-#   Creating a Checking Account for Employee hans:
-print(create_banner("Prince Hans: Checking Account", 96))
-print("\n")
-hans_account = Account(hans)
-# Depositing to the current balance:
-hans_account.deposit(100000)
-print(hans_account)
-print(add_border(90))
+    #   Creating a Checking Account for Customer Snow Blue:
+    print(create_banner("Snow Blue: Checking Account", 94))
+    print("\n")
+    snow_account = Account(snow)
+    print(snow_account)
+    snow.set_account(snow_account)
 
-#   Adding Monthly Salary:
-# 1) Set the hans_account object to account parameter from Employee class:
-hans.set_account(hans_account)
-# 2) Set the salary assigned by the bank:
-hans.set_salary(10000)
-# 3) Add the salary amount to han's bank account (adding to current balance):
-print(hans.add_monthly_salary())
-# See the added monthly salary reflected in hans's checking account:
-print(hans_account)
-print(add_border(90))
+    print(add_border(90))
+    #   Depositing $2100 into Snow Blue's account:
+    print(snow_account.deposit(2100))
+    #   Withdrawing $100 from Snow Blue's account
+    print(snow_account.withdraw(100))
+    print(add_border(90))
 
-# Giving hans Employee a pay raise:
-hans.add_raise()
-# See the pay raise (20% of current salary) reflected in hans's checking account:
-print(hans_account)
-print(add_border(0))
-print("\n")
+    #   Making a purchase:
+    # 1) Instantiate an object from Item class called 'apple'.
+    apple = Item("Apple", 0, 0)
+    # 2) Set the cost and quantity of said apple Item:
+    apple.set_item_cost(5)
+    apple.set_item_quantity(4)
+    # 3) Set the apple object to item parameter in Customer class:
+    snow.set_item(apple)
+    # 4) Calculate the total cost of the items:
+    apple.calculate_total_cost()
+    # 5) Make the purchase (item.calculate_total_cost() has already been applied to the make_purchase(self) method):
+    snow.make_purchase(apple)
+    #   Purchase is reflected as a deduction in snow_account balance:
+    print(snow_account)
 
+    #   Set a date for her purchase:
+    date = Date(21, 12, 1937)
+    print(snow.display_receipt(apple, date))
+    print(add_border(90))
+    print("\n")
 
-#   Creating a Checking Account for Customer Snow Blue:
-print(create_banner("Snow Blue: Checking Account", 94))
-print("\n")
-snow_account = Account(snow)
-print(snow_account)
-snow.set_account(snow_account)
+    #   Creating a savings account for Snow Blue, depositing $1000 into the savings account and setting an interest rate:
+    print(create_banner("Snow Blue: Savings Account", 94))
+    print("\n")
+    snow_savings = Savings(snow, snow_account.get_balance(), 0, 0)
+    print(snow_savings)
 
-print(add_border(90))
-#   Depositing $2100 into Snow Blue's account:
-print(snow_account.deposit(2100))
-#   Withdrawing $100 from Snow Blue's account
-print(snow_account.withdraw(100))
-print(add_border(90))
+    print(add_border(90))
+    print(snow_savings.deposit_to_savings(1000))
+    snow_savings.set_interest(2.5)
+    print(add_border(90))
+    print(snow_savings.calculate_interest())
 
-#   Making a purchase:
-# 1) Instantiate an object from Item class called 'apple'.
-apple = Item("Apple", 0, 0)
-# 2) Set the cost and quantity of said apple Item:
-apple.set_item_cost(5)
-apple.set_item_quantity(4)
-# 3) Set the apple object to item parameter in Customer class:
-snow.set_item(apple)
-# 4) Calculate the total cost of the items:
-apple.calculate_total_cost()
-# 5) Make the purchase (item.calculate_total_cost() has already been applied to the make_purchase(self) method):
-snow.make_purchase(apple)
-#   Purchase is reflected as a deduction in snow_account balance:
-print(snow_account)
+    snow_withdraw = snow_savings.withdraw_savings(100)
+    print(snow_withdraw)
 
-#   Set a date for her purchase:
-date = Date(21,12,1937)
-print(snow.display_receipt(apple, date))
-print(add_border(90))
-print("\n")
+    snow_withdraw = snow_savings.withdraw_savings(100)
+    print(snow_withdraw)
 
+    snow_withdraw = snow_savings.withdraw_savings(100)
+    print(snow_withdraw)
 
-#   Creating a savings account for Snow Blue, depositing $1000 into the savings account and setting an interest rate:
-print(create_banner("Snow Blue: Savings Account", 94))
-print("\n")
-snow_savings = Savings(snow, snow_account.get_balance(),0, 0)
-print(snow_savings)
+    snow_withdraw = snow_savings.withdraw_savings(100)
+    print(snow_withdraw)
 
-print(add_border(90))
-print(snow_savings.deposit_to_savings(1000))
-snow_savings.set_interest(2.5)
-print(add_border(90))
-print(snow_savings.calculate_interest())
+    snow_withdraw = snow_savings.withdraw_savings(100)
+    print(snow_withdraw)
 
-snow_withdraw = snow_savings.withdraw_savings(100)
-print(snow_withdraw)
+    snow_withdraw = snow_savings.withdraw_savings(100)
+    print(snow_withdraw)
 
-snow_withdraw = snow_savings.withdraw_savings(100)
-print(snow_withdraw)
+    # 7th Withdrawal Attempt
+    snow_withdraw = snow_savings.withdraw_savings(100)
+    print(snow_withdraw)
 
-snow_withdraw = snow_savings.withdraw_savings(100)
-print(snow_withdraw)
-
-snow_withdraw = snow_savings.withdraw_savings(100)
-print(snow_withdraw)
-
-snow_withdraw = snow_savings.withdraw_savings(100)
-print(snow_withdraw)
-
-snow_withdraw = snow_savings.withdraw_savings(100)
-print(snow_withdraw)
-
-# 7th Withdrawal Attempt
-snow_withdraw = snow_savings.withdraw_savings(100)
-print(snow_withdraw)
-
-snow_count = snow_savings.get_withdrawal_attempts()
-print(snow_count)
-
-print(apple)
+    snow_count = snow_savings.get_withdrawal_attempts()
+    print(snow_count)
+except FileNotFoundError as error:
+    print("★★★★★★★★★★★★★★ EXCEPTION: FileNotFoundError ★★★★★★★★★★★★★★")
+    print(f"The following file can not be found: {error.filename}. Please try another file")
+except TypeError as error:
+    print("★★★★★★★★★★★★★★ EXCEPTION: TypeError ★★★★★★★★★★★★★★")
+    print("The following operation has been performed on an incorrect/unsupported object type.")
+    print(error)
+except ValueError as error:
+    print("★★★★★★★★★★★★★★ EXCEPTION: ValueError ★★★★★★★★★★★★★★")
+    print("The following operation cannot be performed as an inappropriate value has been assigned to a variable or passed to a function when called.")
+    print(error)
+except InsufficientFundsException as error:
+    print("★★★★★★★★★★★★★★ EXCEPTION: InsufficientFundsException ★★★★★★★★★★★★★★")
+    print("There are not enough funds to process this operation.")
+    print(error)
+except WithdrawalLimitException as error:
+    print("★★★★★★★★★★★★★★ EXCEPTION: WithdrawalLimitException ★★★★★★★★★★★★★★")
+    print("You have reached the maximum withdrawal Attempts.")
+    print(error)
+except Exception as error:
+    print("★★★★★★★★★★★★★★ EXCEPTION: All other Exceptions ★★★★★★★★★★★★★★")
+    print("A general exception has been raised.")
+    print(error)
+finally:
+    print("Continue bank program.")

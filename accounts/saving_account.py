@@ -16,7 +16,7 @@ from exceptions.withdrawal_attempts import WithdrawalLimitException
 
 class Savings(Account):
     withdrawal_attempts = 0
-    def __init__(self, account_holder, balance, savings_balance, interest):
+    def __init__(self, account_holder, balance, savings_balance = 0, interest = 0):
         super().__init__(account_holder, balance)
         self.__savings_balance = savings_balance
         self.__interest = interest

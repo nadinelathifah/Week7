@@ -1,7 +1,7 @@
 # Item class to support Customer class in making purchases
 
 class Item:
-    def __init__(self, item, cost, quantity):
+    def __init__(self, item, cost = 0, quantity = 0):
         self.__item = item
         self.__cost = cost
         self.__quantity = quantity

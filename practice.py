@@ -37,8 +37,7 @@ alice = Employee("Alice",
                  "E001",
                  "Accountant",
                  0,
-                 "Wonderland",
-                 account = None)
+                 "Wonderland")
 
 hans = Employee("Hans",
                 "Westergaard",
@@ -111,7 +110,7 @@ print(hans.add_monthly_salary())
 print(hans_account)
 print(add_border(90))
 
-# Giving hans Employee a pay raise:
+#   Giving hans Employee a pay raise:
 hans.add_raise()
 # See the pay raise (20% of current salary) reflected in hans's checking account:
 print(hans_account)
@@ -135,7 +134,7 @@ print(add_border(90))
 
 #   Making a purchase:
 # 1) Instantiate an object from Item class called 'apple'.
-apple = Item("Apple", 0, 0)
+apple = Item("Apple")
 # 2) Set the cost and quantity of said apple Item:
 apple.set_item_cost(5)
 apple.set_item_quantity(4)
@@ -158,7 +157,7 @@ print("\n")
 #   Creating a savings account for Snow Blue, depositing $1000 into the savings account and setting an interest rate:
 print(create_banner("Snow Blue: Savings Account", 94))
 print("\n")
-snow_savings = Savings(snow, snow_account.get_balance(),0, 0)
+snow_savings = Savings(snow, snow_account.get_balance())
 print(snow_savings)
 
 print(add_border(90))

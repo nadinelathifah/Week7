@@ -1,4 +1,4 @@
-from accounts.insufficientfunds import InsufficientFundsException
+from exceptions.insufficientfunds import InsufficientFundsException
 from people.person import  Person
 from accounts.account import Account
 from items.item import Item
@@ -8,7 +8,7 @@ from date.date import Date
 #   Customer class (Subclass)
 class Customer(Person):
     customer_count = 0
-    def __init__(self, firstname, lastname, age, gender, email, address, customer_id, membership, account, item):
+    def __init__(self, firstname, lastname, age, gender, email, address, customer_id, membership, account = None, item = None):
         super().__init__(firstname, lastname, age, gender, email, address)
         self.__customer_id = customer_id
         self._membership = membership
@@ -42,7 +42,8 @@ class Customer(Person):
             ["Item Cost", f"{item.get_item_cost()}"],
             ["Item Quantity", f"{item.get_item_quantity()}"],
             ["Total Cost", f"{item.calculate_total_cost()}"],
-            ["Purchase Date", f"{Date.display_date(date)}"]
+            ["Purchase Date", f"{Date.display_date(date)}"],
+            ["Remaining Balance", f"{self.__account.get_balance()}"]
         ]
 #       Display output in table format using tabulate (as tb)
         table = tb(data, headers=["Description","Details"], tablefmt="simple")

@@ -4,7 +4,9 @@ try:
     from people.person import Person
     from people.customer import Customer
     from people.employee import Employee
-    from accounts.account import Account, InsufficientFundsException
+    from accounts.account import Account
+    from exceptions.insufficientfunds import InsufficientFundsException
+    from exceptions.withdrawal_attempts import WithdrawalLimitException
     from accounts.saving_account import Savings
     from banners.display import create_banner, add_border
     print(create_banner("Welcome to Fairytale Bank", 95))
@@ -75,6 +77,14 @@ try:
     print(add_border(90))
     print(snow_savings.deposit_to_savings(1000))
     print(add_border(90))
+    # print(snow_savings.withdraw_savings(50))
+    # print(snow_savings.withdraw_savings(50))
+    # print(snow_savings.withdraw_savings(50))
+    # print(snow_savings.withdraw_savings(50))
+    # print(snow_savings.withdraw_savings(50))
+    # print(snow_savings.withdraw_savings(50))
+    # print(snow_savings.withdraw_savings(50))
+    # print(snow_savings.withdraw_savings(50))
     print(snow_savings.calculate_interest())
 except FileNotFoundError as error:
     print("★★★★★★★★★★★★★★ EXCEPTION: FileNotFoundError ★★★★★★★★★★★★★★")
@@ -90,6 +100,10 @@ except ValueError as error:
 except InsufficientFundsException as error:
     print("★★★★★★★★★★★★★★ EXCEPTION: InsufficientFundsException ★★★★★★★★★★★★★★")
     print("There are not enough funds to process this operation.")
+    print(error)
+except WithdrawalLimitException as error:
+    print("★★★★★★★★★★★★★★ EXCEPTION: WithdrawalLimitException ★★★★★★★★★★★★★★")
+    print("You have reached the maximum withdrawal Attempts.")
     print(error)
 except Exception as error:
     print("★★★★★★★★★★★★★★ EXCEPTION: All other Exceptions ★★★★★★★★★★★★★★")

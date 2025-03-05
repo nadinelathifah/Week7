@@ -9,7 +9,9 @@
 #                                  (2) Variable savings: fluctuate by year.
 #   Withdrawal limit: limited to 6 times per month.
 
-from accounts.account import Account, InsufficientFundsException
+from accounts.account import Account
+from exceptions.insufficientfunds import InsufficientFundsException
+from exceptions.withdrawal_attempts import WithdrawalLimitException
 
 
 class Savings(Account):
@@ -31,7 +33,7 @@ class Savings(Account):
 
     def withdraw_savings(self, amount):
         if Savings.withdrawal_attempts >= 6:
-            return f"\033[1;91m★ Withdrawal Blocked ★ Unfortunately, you have reached the maximum withdrawal limit for this month.\nPlease refer to your checking account for future transactions.\033[0m"
+            raise WithdrawalLimitException()
         elif 0 < amount <= self.__savings_balance:
             self.__savings_balance -= amount
             Savings.withdrawal_attempts += 1

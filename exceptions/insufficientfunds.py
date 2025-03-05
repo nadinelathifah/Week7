@@ -1,5 +1,4 @@
 
-
 #   Define a custom exception class for insufficient funds:
 class InsufficientFundsException(Exception):
 #   Constructor to initialize the exception with a custom message.

@@ -1,9 +1,8 @@
 # Account Base Class:
-from people.person import Person
-from accounts.insufficientfunds import InsufficientFundsException
+from exceptions.insufficientfunds import InsufficientFundsException
 
 class Account:
-    def __init__(self, account_holder, balance):
+    def __init__(self, account_holder, balance = 0):
         self.account_holder = account_holder
         self.__balance = balance
 

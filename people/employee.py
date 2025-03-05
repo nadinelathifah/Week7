@@ -4,7 +4,7 @@ from accounts.account import Account
 # Employee is a Subclass of Person and inherits the properties of Person while adding more attributes: employee_id, position.
 class Employee(Person):
     employee_count = 0
-    def __init__(self, firstname, lastname, age, gender, email, address, employee_id, position, salary, city, account):
+    def __init__(self, firstname, lastname, age, gender, email, address, employee_id, position, salary, city, account = None):
 #       super() is a function used to call a method from the base (super) class.
 #       allows you to access the methods and properties of a base class
         super().__init__(firstname, lastname, age, gender, email, address)

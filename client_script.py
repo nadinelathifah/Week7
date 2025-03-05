@@ -49,8 +49,7 @@ hans = Employee("Hans",
                 "E002",
                 "Chairman",
                 0,
-                "Wonderland",
-                account = None)
+                "Wonderland")
 
 #   snow is an instance object created from the Customer subclass.
 snow = Customer("Snow",
@@ -60,9 +59,7 @@ snow = Customer("Snow",
                 "snow.white@gmail.com",
                 "7 Dwarves St",
                 "C001",
-                "Silver",
-                account = None,
-                item = None)
+                "Silver")
 
 print(add_border(0))
 
@@ -97,7 +94,7 @@ print("\n")
 #   Creating a Checking Account for Employee hans:
 print(create_banner("Prince Hans: Checking Account", 96))
 print("\n")
-hans_account = Account(hans, 0)
+hans_account = Account(hans)
 # Depositing to the current balance:
 hans_account.deposit(100000)
 print(hans_account)
@@ -125,7 +122,7 @@ print("\n")
 #   Creating a Checking Account for Customer Snow Blue:
 print(create_banner("Snow Blue: Checking Account", 94))
 print("\n")
-snow_account = Account(snow,0)
+snow_account = Account(snow)
 print(snow_account)
 snow.set_account(snow_account)
 

@@ -182,7 +182,7 @@ try:
     snow_withdraw = snow_savings.withdraw_savings(100)
     print(snow_withdraw)
 
-    snow_withdraw = snow_savings.withdraw_savings(100)
+    snow_withdraw = snow_savings.withdraw_savings(3000)
     print(snow_withdraw)
 
     # 7th Withdrawal Attempt

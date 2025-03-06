@@ -11,7 +11,7 @@ class Account:
             self.__balance += amount
             return f"\033[92m${amount} has been deposited to the account belonging to {self.account_holder.get_fullname()}.\033[0m\nMain Account balance: $\033[97m{self.get_balance()}\033[0m"
         else:
-            raise InsufficientFundsException()
+            return ValueError("Ensure the deposit is a positive integer.")
 
     def withdraw(self, amount):
         if 0 < amount < self.__balance:

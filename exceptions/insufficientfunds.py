@@ -8,4 +8,6 @@ class InsufficientFundsException(Exception):
     def __init__(self, message= "Invalid withdrawal amount. Unfortunately, you are unable to complete the transaction. Please ensure that you have sufficient funds in your account."):
 #   Call the parent constructor to override the parameter "message"
         super().__init__(message)
-        self.message = message
+        # self.message = message
+
+# Add parameter for overdrawn funds

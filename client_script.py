@@ -186,14 +186,9 @@ try:
     print(snow_withdraw)
 
     # 7th Withdrawal Attempt
-    snow_withdraw = snow_savings.withdraw_savings(100)
-    print(snow_withdraw)
-
-    snow_count = snow_savings.get_withdrawal_attempts()
-    print(snow_count)
-
-    # snow_withdraw = snow_savings.withdraw_savings(2000)
+    # snow_withdraw = snow_savings.withdraw_savings(100)
     # print(snow_withdraw)
+
 except FileNotFoundError as error:
     print("★★★★★★★★★★★★★★ EXCEPTION: FileNotFoundError ★★★★★★★★★★★★★★")
     print(f"The following file can not be found: {error.filename}. Please try another file")

@@ -28,7 +28,7 @@ class Savings(Account):
             self.__savings_balance += amount
             return f"\033[92m${amount} has been transferred to the savings account belonging to {self.account_holder.get_fullname()}.\033[0m\nMain Account balance: $\033[97m{self.get_balance()}\033[0m\nSavings Account balance: $\033[97m{self.get_savings_balance()}\033[0m"
         else:
-            raise InsufficientFundsException("Invalid transfer. Ensure that the number you have entered is positive and that you have sufficient balance in your main account.")
+            raise InsufficientFundsException()
 
 
     def withdraw_savings(self, amount):
@@ -39,7 +39,7 @@ class Savings(Account):
             Savings.withdrawal_attempts += 1
             return f"\033[93m${amount} has been withdrawn from the account belonging to {self.account_holder.get_fullname()}.\033[0m\nSavings Account balance: $\033[97m{self.get_savings_balance()}\033[0m"
         else:
-            return InsufficientFundsException("Invalid withdrawal amount. Please ensure that you have entered a positive integer and that there are sufficient funds in your account.")
+            raise InsufficientFundsException()
 
 
 #   The isinstance() is a built-in function that is used to validate whether the instance object belongs to a specific class.

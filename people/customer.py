@@ -29,7 +29,7 @@ class Customer(Person):
         if self.__account.get_balance() >= total_cost:
             self.__account.withdraw(total_cost)
         else:
-            raise InsufficientFundsException("You do not have enough funds to make this purchase.")
+            return InsufficientFundsException()
 
 
 #   Using the tabulate module, create a list of lists to display the table like: | row | column | column |

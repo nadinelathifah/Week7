@@ -24,6 +24,10 @@ class Customer(Person):
         person_info = super().__str__()
         return f"{person_info}\nCustomer ID: {self.__customer_id}\nMembership Type: {self._membership}"
 
+#   This method allows the Customer object to make a purchase.
+#   First the total cost of the item is calculated using the item.calculate_total_cost method taken from the Item class.
+#   The condition retrieves the main account balance assigned to the account object that is set to the Customer class.
+#   The condition states that if the balance (amount of money) in the account is larger than the total cost of the item, allow the customer to withdraw the total cost from the main account.
     def make_purchase(self, item):
         total_cost = item.calculate_total_cost()
         if self.__account.get_balance() >= total_cost:

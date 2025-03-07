@@ -25,10 +25,15 @@ class Employee(Person):
     def __repr__(self):
         return "\nEmployee iD: %s\nPosition: %s\nSalary: %s\nCity: %s"%(self.__employee_id, self.position, self.__salary, self.__city)
 
+
+#   This method takes the salary (which can be set using set_salary() in the client script) and deposits it into the main account using the deposit() method (imported from Account class).
     def add_monthly_salary(self):
         pay = self.__account.deposit(self.__salary)
         return f"\033[92mMonthly salary of {pay}\033[0m"
 
+
+#   This method sets the raise to be 20% of the current salary.
+#   Deposits the pay_raise amount to the main account.
     def add_raise(self):
         pay_raise = 0.2 * self.__salary
         add_to_account = self.__account.deposit(pay_raise)

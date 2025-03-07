@@ -11,7 +11,7 @@ from people.person import Person
 
 class Joint(Account):
     #   Constructor initialising two accounts where account_holder_1 overrides account_holder, and balance_1 overrides balance in Account base class.
-    def __init__(self, account_holder_1, account_holder_2, balance_1, balance_2, joint_balance):
+    def __init__(self, account_holder_1, account_holder_2, balance_1=0, balance_2=0, joint_balance=0):
         super().__init__(account_holder_1, balance_1)
         self.account_holder_2 = account_holder_2
         self.__balance_2 = balance_2
@@ -69,7 +69,7 @@ print("\n")
 print(triton_account)
 print("\n")
 
-joint = Joint(ariel_account, triton_account, 0, 0, 0)
+joint = Joint(ariel_account, triton_account)
 
 
 

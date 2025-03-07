@@ -21,7 +21,7 @@ class Savings(Account):
         self.__savings_balance = savings_balance
         self.__interest = interest
 
-
+#   This method deposits an amount from the main account to the savings account.
     def deposit_to_savings(self, amount):
         if 0 < amount < self.get_balance():
             self.withdraw(amount)
@@ -30,10 +30,12 @@ class Savings(Account):
         else:
             raise InsufficientFundsException()
 
-
+#   This method withdraws from the savings account, adding increments to every withdrawal attempt.
+#   The conditional statement states that if the withdrawal attempt exceeds 6 (times), raise the following exception.
     def withdraw_savings(self, amount):
         if Savings.withdrawal_attempts >= 6:
             raise WithdrawalLimitException()
+    #   Otherwise, if the amount is bigger than 0 but less than the balance, then withdraw from the savings account balance.
         elif 0 < amount <= self.__savings_balance:
             self.__savings_balance -= amount
             Savings.withdrawal_attempts += 1
